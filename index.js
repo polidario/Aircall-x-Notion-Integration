@@ -110,7 +110,7 @@ async function addToNotion(callData, insights) {
             },
           }],
         },
-        'Call ID': {
+        'Caller ID': {
           rich_text: [{
             text: {
               content: callData.id.toString(),
@@ -125,17 +125,17 @@ async function addToNotion(callData, insights) {
             name: callData.direction || 'Unknown',
           },
         },
-        'Phone Number': {
+        'Phone number': {
           phone_number: callData.raw_digits || '',
         },
-        'AI Summary': {
+        'Transcript': {
           rich_text: [{
             text: {
               content: insights,
             },
           }],
         },
-        'Call Date': {
+        'Call date': {
           date: {
             start: new Date(callData.started_at * 1000).toISOString().split('T')[0],
           },
