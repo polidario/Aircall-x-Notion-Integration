@@ -1,12 +1,13 @@
 const axios = require('axios');
 require('dotenv').config();
 
+const aircall_api_url = process.env.AIRCALL_API_URL;
 const webhook_url = process.env.WEBHOOK_URL;
 
 async function createWebhook() {
   try {
     const response = await axios.post(
-      `${webhook_url}`,
+      `${aircall_api_url}/webhooks`,
       {
         custom_name: 'Notion Integration Webhook',
         url: webhook_url, // Make sure you supply the WEBHOOK_URL in your .env
